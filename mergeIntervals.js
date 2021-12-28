@@ -19,11 +19,7 @@
             let item = intervals[i];
             let newArr = [];
             let other = intervals[i+1];
-            if (
-                (other[0] >= item[0] && other[0] <= item[1]) || 
-                (other[1] <= item[1] && other[1] >= item[0]) || 
-                (other[0] <= item[0] && other[1] >= item[1])
-            ) {
+            if (other[0] >= item[0] && other[0] <= item[1]) {
                 newArr = item.concat(other).sort(function(a, b) {
                     return a - b;
                 });
@@ -38,8 +34,14 @@
 };
 
 console.log(merge([[1,3],[2,6],[8,10],[15,18]]))
+console.log([[1,6],[8,10],[15,18]])
 console.log(merge([[1,4],[4,5]]))
+console.log([[1,5]])
 console.log(merge([[1,4],[0,5]]))
+console.log([[0,5]])
 console.log(merge([[1,4],[0,2],[3,5]]))
+console.log([[0,5]])
 console.log(merge([[2,3],[4,5],[6,7],[8,9],[1,10]]))
+console.log([[1,10]])
 console.log(merge([[2,3],[5,5],[2,2],[3,4],[3,4]]))
+console.log([[[2,4],[5,5]]])
